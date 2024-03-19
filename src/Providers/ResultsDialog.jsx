@@ -5,6 +5,7 @@ import {
   DialogActions,
   DialogTitle,
   DialogContent,
+  Box,
 } from "@mui/material";
 import { useGame } from "./GameProvider";
 import { useUserStats } from "./UserStatsProvider";
@@ -22,10 +23,8 @@ const ResultsDialog = ({ isOpen, onClose, onSubmit }) => {
     <Dialog open={isOpen}>
       <DialogTitle>Results</DialogTitle>
       <DialogContent>
-        Average WPM for game: {totalGameWPM}
-        <br />
-        Total average WPM: {averageWPMForUser}
-        <br />
+        <Box mb={2}>Average WPM for game: {totalGameWPM}</Box>
+        <Box mb={2}>Total average WPM: {averageWPMForUser}</Box>
       </DialogContent>
       <DialogContent>Do you want to play again?</DialogContent>
       <DialogActions>
