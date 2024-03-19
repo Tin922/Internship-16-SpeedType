@@ -5,6 +5,7 @@ import { useUserStats } from "../../Providers/UserStatsProvider";
 import { useGame, GAME_TYPE } from "../../Providers/GameProvider";
 import { useDialog, DIALOG } from "../../Providers/DialogProvider";
 import { useStopwatch } from "../../Providers/StopwatchProvider";
+import classes from "./index.module.css";
 
 const TypingGameDemo = () => {
   const {
@@ -93,7 +94,7 @@ const TypingGameDemo = () => {
 
       <p>Click on the text below and start typing (esc to reset)</p>
       <div
-        className="typing-test"
+        className={classes.typingTest}
         onKeyDown={(e) => {
           handleKey(e.key);
           e.preventDefault();
@@ -107,7 +108,7 @@ const TypingGameDemo = () => {
             <span
               key={char + index}
               style={{ color }}
-              className={currIndex + 1 === index ? "curr-letter" : ""}
+              className={currIndex + 1 === index ? classes.currLetter : ""}
             >
               {char}
             </span>

@@ -1,14 +1,14 @@
-.typing-test {
+.typingTest {
   font-size: 3rem;
   outline: none;
 }
 
-.curr-letter {
+.currLetter {
   position: relative;
   display: inline;
 }
 
-.curr-letter::before {
+.currLetter::before {
   content: "";
   position: absolute;
   left: 0;
