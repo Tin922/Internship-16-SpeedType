@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Header from "./Pages/Header/Header/Header";
+import Header from "./Pages/Header/Header";
 import { StyledEngineProvider } from "@mui/material";
 import NewGameMode from "./Componentns/NewGameMode/NewGameMode";
 import UserStatsProvider from "./Providers/UserStatsProvider";
@@ -7,7 +7,7 @@ import DialogProvider from "./Providers/DialogProvider";
 import PracticeMode from "./Componentns/PracticeMode/PracticeMode";
 import GameProvider from "./Providers/GameProvider";
 import StopwatchProvider from "./Providers/StopwatchProvider";
-import HomePage from "./Pages/Header/HomePage/HomePage";
+import HomePage from "./Pages/HomePage/HomePage";
 const App = () => {
   return (
     <>

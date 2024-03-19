@@ -1,10 +1,10 @@
 import { Button } from "@mui/material";
-import { useUserStats } from "../../../Providers/UserStatsProvider";
-import { DIALOG, useDialog } from "../../../Providers/DialogProvider";
+import { useUserStats } from "../../Providers/UserStatsProvider";
+import { DIALOG, useDialog } from "../../Providers/DialogProvider";
 import { useNavigate } from "react-router-dom";
-import DialogSwitch from "../../../Dialogs/DialogSwitch";
-import { GAME_TYPE, useGame } from "../../../Providers/GameProvider";
-import { useStopwatch } from "../../../Providers/StopwatchProvider";
+import DialogSwitch from "../../Dialogs/DialogSwitch";
+import { GAME_TYPE, useGame } from "../../Providers/GameProvider";
+import { useStopwatch } from "../../Providers/StopwatchProvider";
 import classes from "./index.module.css";
 const Header = () => {
   const { averageWPMForUser, totalLevelsPassed } = useUserStats();
