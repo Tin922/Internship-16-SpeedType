@@ -1,10 +1,11 @@
 import { Button } from "@mui/material";
-import { useUserStats } from "../../Providers/UserStatsProvider";
-import { DIALOG, useDialog } from "../../Providers/DialogProvider";
+import { useUserStats } from "../../../Providers/UserStatsProvider";
+import { DIALOG, useDialog } from "../../../Providers/DialogProvider";
 import { useNavigate } from "react-router-dom";
-import DialogSwitch from "../../Dialogs/DialogSwitch";
-import { GAME_TYPE, useGame } from "../../Providers/GameProvider";
-import { useStopwatch } from "../../Providers/StopwatchProvider";
+import DialogSwitch from "../../../Dialogs/DialogSwitch";
+import { GAME_TYPE, useGame } from "../../../Providers/GameProvider";
+import { useStopwatch } from "../../../Providers/StopwatchProvider";
+import classes from "./index.module.css";
 const Header = () => {
   const context = useUserStats();
   const { open, close } = useDialog();
@@ -12,9 +13,9 @@ const Header = () => {
   const { setGameType, resetGame } = useGame();
   const { stopStopwatch } = useStopwatch();
 
-  const handleSubmit = (route) => {
+  const handleSubmit = (url) => {
     close();
-    navigate(route);
+    navigate(url);
   };
   const handleNewGameClick = () => {
     open(DIALOG.NEW_GAME, {
@@ -40,11 +41,16 @@ const Header = () => {
   };
   return (
     <>
-      <Button onClick={handlePracticeClick}>Practice</Button>
-      <Button onClick={handleNewGameClick}>New Game</Button>
-      <p>Stats:</p>
-      <p>WPM: {context.averageWPMForUser}</p>
-      <p>Levels passed:{context.totalLevelsPassed}</p>
+      <div className={classes.buttons}>
+        <Button onClick={handlePracticeClick}>Practice</Button>
+        <Button variant="contained" onClick={handleNewGameClick}>
+          New Game
+        </Button>
+      </div>
+      <div className={classes.stats}>
+        <p>WPM: {context.averageWPMForUser}</p>
+        <p>Levels passed:{context.totalLevelsPassed}</p>
+      </div>
       <DialogSwitch />
     </>
   );
