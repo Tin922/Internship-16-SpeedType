@@ -7,7 +7,7 @@ import { useDialog, DIALOG } from "../../Providers/DialogProvider";
 import { useStopwatch } from "../../Providers/StopwatchProvider";
 import classes from "./index.module.css";
 
-const TypingGameDemo = () => {
+const TypingGame = () => {
   const {
     currentLevel,
     currentTypingText: text,
@@ -29,6 +29,7 @@ const TypingGameDemo = () => {
   const handleKey = (key) => {
     if (key === "Escape") {
       resetTyping();
+      stopStopwatch();
     } else if (key === "Backspace") {
       deleteTyping(false);
     } else if (key.length === 1) {
@@ -89,7 +90,15 @@ const TypingGameDemo = () => {
   }, [phase]);
   return (
     <div>
-      <h1>React Typing Game Hook Demo</h1>
+      <h1
+        className={`${classes.gameMode} ${
+          gameType === GAME_TYPE.INSTANT_DEATH
+            ? classes.gameModeInstantDeath
+            : ""
+        }`}
+      >
+        {gameType === GAME_TYPE.REGULAR ? "Regular Mode" : "Instant Death Mode"}
+      </h1>
       {<p>Elapsed Time: {Math.round(elapsedTime)} seconds</p>}
 
       <p>Click on the text below and start typing (esc to reset)</p>
@@ -119,4 +128,4 @@ const TypingGameDemo = () => {
   );
 };
 
-export default TypingGameDemo;
+export default TypingGame;

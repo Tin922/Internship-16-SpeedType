@@ -16,3 +16,12 @@
   bottom: 0;
   border-left: 1px solid black;
 }
+.gameMode {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.gameModeInstantDeath {
+  color: red;
+  font-weight: bold;
+}
