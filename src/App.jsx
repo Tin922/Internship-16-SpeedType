@@ -7,7 +7,7 @@ import DialogProvider from "./Providers/DialogProvider";
 import PracticeMode from "./Componentns/PracticeMode/PracticeMode";
 import GameProvider from "./Providers/GameProvider";
 import StopwatchProvider from "./Providers/StopwatchProvider";
-import HomePage from "./Pages/Header/HomePage";
+import HomePage from "./Pages/Header/HomePage/HomePage";
 const App = () => {
   return (
     <>

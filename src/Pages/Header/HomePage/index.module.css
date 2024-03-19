@@ -1,0 +1,12 @@
+.homepage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.title {
+  font-size: 50px;
+  color: #333;
+  text-align: center;
+}
