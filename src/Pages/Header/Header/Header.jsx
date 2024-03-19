@@ -7,7 +7,7 @@ import { GAME_TYPE, useGame } from "../../../Providers/GameProvider";
 import { useStopwatch } from "../../../Providers/StopwatchProvider";
 import classes from "./index.module.css";
 const Header = () => {
-  const context = useUserStats();
+  const { averageWPMForUser, totalLevelsPassed } = useUserStats();
   const { open, close } = useDialog();
   const navigate = useNavigate();
   const { setGameType, resetGame } = useGame();
@@ -48,8 +48,8 @@ const Header = () => {
         </Button>
       </div>
       <div className={classes.stats}>
-        <p>WPM: {context.averageWPMForUser}</p>
-        <p>Levels passed:{context.totalLevelsPassed}</p>
+        <p>WPM: {averageWPMForUser}</p>
+        <p>Levels passed:{totalLevelsPassed}</p>
       </div>
       <DialogSwitch />
     </>
