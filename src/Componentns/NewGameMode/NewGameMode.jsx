@@ -21,17 +21,7 @@ const TypingGameDemo = () => {
   const { elapsedTime, startStopwatch, stopStopwatch } = useStopwatch();
 
   const {
-    states: {
-      charsState,
-      length,
-      currIndex,
-      currChar,
-      correctChar,
-      errorChar,
-      phase,
-      startTime,
-      endTime,
-    },
+    states: { charsState, currIndex, errorChar, phase, startTime, endTime },
     actions: { insertTyping, resetTyping, deleteTyping },
   } = useTypingGame(text);
 
@@ -124,23 +114,6 @@ const TypingGameDemo = () => {
           );
         })}
       </div>
-
-      <pre>
-        {JSON.stringify(
-          {
-            startTime,
-            endTime,
-            length,
-            currIndex,
-            currChar,
-            correctChar,
-            errorChar,
-            phase,
-          },
-          null,
-          2
-        )}
-      </pre>
     </div>
   );
 };
