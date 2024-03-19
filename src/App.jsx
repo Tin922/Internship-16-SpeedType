@@ -8,6 +8,7 @@ import PracticeMode from "./Componentns/PracticeMode/PracticeMode";
 import GameProvider from "./Providers/GameProvider";
 import StopwatchProvider from "./Providers/StopwatchProvider";
 import HomePage from "./Pages/HomePage/HomePage";
+import NotFound from "./Pages/NotFound/NotFound";
 const App = () => {
   return (
     <>
@@ -21,6 +22,7 @@ const App = () => {
                   <Route path="/" element={<HomePage />} />
                   <Route path="/newGame" element={<NewGameMode />} />
                   <Route path="/practice" element={<PracticeMode />} />
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </StopwatchProvider>
             </GameProvider>
