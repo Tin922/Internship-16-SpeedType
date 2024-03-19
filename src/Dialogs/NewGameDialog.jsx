@@ -1,5 +1,4 @@
-import { Dialog, DialogTitle, DialogActions } from "@mui/material";
-import { Button } from "@mui/material";
+import { Dialog, DialogTitle, DialogActions, Button } from "@mui/material";
 const NewGameDialog = ({
   isOpen,
   onClose,
