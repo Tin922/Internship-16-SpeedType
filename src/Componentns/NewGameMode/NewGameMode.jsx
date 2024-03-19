@@ -1,6 +1,6 @@
 import useTypingGame from "react-typing-game-hook";
-import { PhaseType, CharStateType } from "react-typing-game-hook";
-import { useEffect, useState } from "react";
+import { PhaseType } from "react-typing-game-hook";
+import { useEffect } from "react";
 import { useUserStats } from "../../Providers/UserStatsProvider";
 import { useGame, GAME_TYPE } from "../../Providers/GameProvider";
 import { useDialog, DIALOG } from "../../Providers/DialogProvider";
