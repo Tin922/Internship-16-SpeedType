@@ -49,7 +49,7 @@ const GameProvider = ({ children }) => {
   };
 
   const handleCurrentGameNewWPM = (newWPM) => {
-    setTotalGameWPM((prevWPM) => (prevWPM + newWPM) / 2);
+    setTotalGameWPM((prevWPM) => parseInt(Math.round((prevWPM + newWPM) / 2)));
   };
   const handleNextLevelText = () => {
     setCurrentTypingText(randomTypingTexts[currentLevel].text);

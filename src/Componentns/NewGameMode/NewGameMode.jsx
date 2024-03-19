@@ -66,7 +66,9 @@ const TypingGame = () => {
       stopStopwatch();
 
       const wordCount = text.split(" ").length;
-      const newWPM = (wordCount / (endTime - startTime)) * 1000 * 60;
+      const newWPM = Math.round(
+        (wordCount / (endTime - startTime)) * 1000 * 60
+      );
       handleNewWPM(newWPM);
       handleCurrentGameNewWPM(newWPM);
 

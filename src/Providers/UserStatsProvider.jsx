@@ -21,7 +21,7 @@ const UserStatsProvider = ({ children }) => {
     setTotalLevelsPassed((prev) => prev + 1);
   };
   const handleNewWPM = (newWPM) => {
-    setAverageWPMForUser((prevWPM) => (prevWPM + newWPM) / 2);
+    setAverageWPMForUser((prevWPM) => Math.round((prevWPM + newWPM) / 2));
   };
   return (
     <UserStatsContext.Provider
