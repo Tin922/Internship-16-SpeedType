@@ -1,6 +1,7 @@
 .typingTest {
   font-size: 3rem;
   outline: none;
+  margin-left: 40px;
 }
 
 .currLetter {
@@ -24,4 +25,17 @@
 .gameModeInstantDeath {
   color: red;
   font-weight: bold;
+}
+.elapsedTimeContainer {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0;
+  font-size: 1.1rem;
+  color: #333;
+}
+.instructions {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 40px;
+  margin-left: 30px;
 }

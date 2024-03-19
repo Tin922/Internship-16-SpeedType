@@ -99,9 +99,13 @@ const TypingGame = () => {
       >
         {gameType === GAME_TYPE.REGULAR ? "Regular Mode" : "Instant Death Mode"}
       </h1>
-      {<p>Elapsed Time: {Math.round(elapsedTime)} seconds</p>}
+      <div className={classes.elapsedTimeContainer}>
+        <p>Elapsed Time: {Math.round(elapsedTime)} seconds</p>
+      </div>
 
-      <p>Click on the text below and start typing (esc to reset)</p>
+      <p className={classes.instructions}>
+        Click on the text below and start typing (esc to reset)
+      </p>
       <div
         className={classes.typingTest}
         onKeyDown={(e) => {
