@@ -11,7 +11,7 @@ const Header = () => {
   const { open, close } = useDialog();
   const navigate = useNavigate();
   const { setGameType, resetGame } = useGame();
-  const { stopStopwatch } = useStopwatch();
+  const { resetStopwatch } = useStopwatch();
 
   const handleSubmit = (url) => {
     close();
@@ -20,15 +20,15 @@ const Header = () => {
   const handleNewGameClick = () => {
     open(DIALOG.NEW_GAME, {
       handleSubmitRegular: () => {
-        handleSubmit("/newGame");
         resetGame();
-        stopStopwatch();
+        resetStopwatch();
+        handleSubmit("/newGame");
         setGameType(GAME_TYPE.REGULAR);
       },
       handleSubmitInstantDeath: () => {
-        handleSubmit("/newGame");
         resetGame();
-        stopStopwatch();
+        resetStopwatch();
+        handleSubmit("/newGame");
         setGameType(GAME_TYPE.INSTANT_DEATH);
       },
     });

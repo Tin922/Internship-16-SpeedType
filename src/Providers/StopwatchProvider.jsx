@@ -4,6 +4,7 @@ const defaultContext = {
   elapsedTime: 0,
   startStopwatch: (startTime) => {},
   stopStopwatch: () => {},
+  resetStopwatch: () => {},
 };
 
 const StopwatchContext = createContext(defaultContext);
@@ -22,9 +23,11 @@ const StopwatchProvider = ({ children }) => {
 
   const stopStopwatch = () => {
     clearInterval(intervalId);
+  };
+  const resetStopwatch = () => {
+    clearInterval(intervalId);
     setElapsedTime(0);
   };
-
   useEffect(() => {
     return () => {
       clearInterval(intervalId);
@@ -37,6 +40,7 @@ const StopwatchProvider = ({ children }) => {
         elapsedTime,
         startStopwatch,
         stopStopwatch,
+        resetStopwatch,
       }}
     >
       {children}

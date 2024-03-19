@@ -19,7 +19,8 @@ const TypingGame = () => {
   } = useGame();
   const { handleLevelPass, handleNewWPM } = useUserStats();
   const { open, close } = useDialog();
-  const { elapsedTime, startStopwatch, stopStopwatch } = useStopwatch();
+  const { elapsedTime, startStopwatch, stopStopwatch, resetStopwatch } =
+    useStopwatch();
 
   const {
     states: { charsState, currIndex, errorChar, phase, startTime, endTime },
@@ -29,7 +30,7 @@ const TypingGame = () => {
   const handleKey = (key) => {
     if (key === "Escape") {
       resetTyping();
-      stopStopwatch();
+      resetStopwatch();
     } else if (key === "Backspace") {
       deleteTyping(false);
     } else if (key.length === 1) {
@@ -78,6 +79,7 @@ const TypingGame = () => {
         open(DIALOG.CONFIRM, {
           onSubmit: () => {
             handleCurrentGameLevelPass();
+            resetStopwatch();
             close();
           },
         });
