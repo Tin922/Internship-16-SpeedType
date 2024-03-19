@@ -10,7 +10,7 @@ const ConfirmDialog = ({ isOpen, onClose, onSubmit }) => {
   };
   return (
     <Dialog open={isOpen} onClose={onClose}>
-      <DialogTitle>Do you want to processed to new level</DialogTitle>
+      <DialogTitle>Would you like to proceed to the next level?</DialogTitle>
       <DialogActions>
         <Button onClick={onSubmit}>Yes</Button>
         <Button onClick={navgiateToHomePage}>No</Button>
