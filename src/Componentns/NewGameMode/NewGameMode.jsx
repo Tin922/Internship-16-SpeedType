@@ -47,7 +47,7 @@ const TypingGame = () => {
   const handleGameRestartSubmit = (gameType) => {
     close();
     setGameType(gameType);
-    stopStopwatch();
+    resetStopwatch();
     resetGame();
   };
 
